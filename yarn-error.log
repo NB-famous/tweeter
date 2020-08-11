@@ -1,0 +1,47 @@
+Arguments: 
+  /home/vagrant/.nvm/versions/node/v10.20.1/bin/node /home/vagrant/.nvm/versions/node/v10.20.1/bin/yarn add nodemon
+
+PATH: 
+  /home/vagrant/bin:/home/vagrant/.local/bin:/home/vagrant/.nvm/versions/node/v10.20.1/bin:/home/vagrant/.rvm/gems/ruby-2.3.5/bin:/home/vagrant/.rvm/gems/ruby-2.3.5@global/bin:/home/vagrant/.rvm/rubies/ruby-2.3.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/vagrant/.rvm/bin:/home/vagrant/.rvm/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  10.20.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: EPROTO: protocol error, symlink '../../../semver/bin/semver.js' -> '/vagrant/w4/tweeter/node_modules/make-dir/node_modules/.bin/semver'
+
+npm manifest: 
+  {
+    "name": "tweeter",
+    "version": "1.0.0",
+    "description": "A twitter clone by Lighthouse Labs for web bootcamp students to learn front-end dev skillz",
+    "main": "server/index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server/index.js",
+      "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
+    },
+    "author": "Lighthouse Labs",
+    "license": "ISC",
+    "dependencies": {
+      "body-parser": "^1.15.2",
+      "chance": "^1.0.2",
+      "express": "^4.13.4",
+      "md5": "^2.1.0"
+    },
+    "devDependencies": {
+      "nodemon": "^1.9.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

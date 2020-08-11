@@ -15,10 +15,42 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: black;
+  background-color: #3b65ad;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 24px;
+  background-image: url(/../images/skulls.png);
 }
+
+nav{
+  display:flex;
+  justify-content: space-between;
+  padding: 1.5em;
+  height: 120px;
+  background-color:#4056A1;
+}
+
+ nav h1{
+  font-family: 'Bungee', cursive;
+  margin-top: 20px;
+  margin-left: 30px;
+  color:white;
+}
+
+nav p{
+  margin-top: 30px;
+  margin-left: 30px;
+  padding-bottom: 10px;
+  color:white;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
