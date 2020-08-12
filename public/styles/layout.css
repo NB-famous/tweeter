@@ -70,11 +70,15 @@ body {
 }
 
 .tweet_icon{
+  display: flex;
+  align-content: flex-end;
+  flex-direction: column;
   padding-bottom: 50px;
 }
 
 .client-text{
   padding-bottom: 2px;
+  margin-left: 50px;
 }
 
 .client-text article{
@@ -82,14 +86,16 @@ body {
 }
 
 
-.client-text hr{
-  width: 850px;
+.myLine {
+  width: 700px;
   border: 2px solid white;
 }
 
 footer.footer_icon{
   display: flex;
   justify-content: space-between;
+  padding-right: 20px;
+  padding-bottom: 10px;
 }
 
 img.man-icon{
@@ -103,7 +109,7 @@ span.icon-name{
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   color:white;
-  margin-left: 10px;
+  margin-left: 20px;
   
 
 }

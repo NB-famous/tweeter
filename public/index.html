@@ -16,6 +16,7 @@
 
   <!--External Icons-->
   <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+  <script src="https://kit.fontawesome.com/4ba6131562.js" crossorigin="anonymous"></script>
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -29,6 +30,7 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
 </head>
 
 <body>
@@ -56,14 +58,18 @@
   <main id="main_container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form action="/tweets" method="POST">
-        <label for="tweet-text">What are you humming about?</label><br>
-        <textarea name="text" id="tweet-text"></textarea>
+      <form id="compose" action="/tweets" method="POST">
+        <textarea name="text" id="tweet-text" placeholder='What are you humming about?'></textarea>
         <div>
-          <button type="submit"><span>Tweet</span></button>
+          <button id='tweet_btn' type="submit"><span>Tweet</span></button>
           <span id="wordCount">140</span>
         </div>
       </form>
+
+    <div id="tweets-container">
+      <article class='client-tweet'/>
+
+<!-- ///This is previous code before Ajax erase later
 
       <section class='client-tweet'>
       <div class="tweet_container">
@@ -72,9 +78,9 @@
             <span class='icon-name'>NB-famous</span>
         </header>
         <div class='client-text'>
-        <article>Client Tweet Goes Here</article><br>
-        <hr>
         </div>
+        <br>
+        <hr class='myLine'>
         <div>
           <footer class='footer_icon'>
             <label for='last-post'><span>days</span></label>
@@ -83,9 +89,10 @@
         </div>
       </div>
       </section>
+-->
 
-      </section>
-
+      </article>
+    </div>
     
   </main>
 </body>
