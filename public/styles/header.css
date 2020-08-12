@@ -1,4 +1,4 @@
-header{
+#user_header{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,5 +8,11 @@ header{
 
 .avatar{
     height: 256px;
+    padding-top: 135px;
+    margin-top: 50px;
 }
 
+.yourname{
+    margin-top: 80px;
+
+}

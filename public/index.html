@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
 
+  <!--External Icons-->
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
@@ -30,14 +33,14 @@
 
 <body>
   <!-- Top nav bar (fixed) -->
-  <nav>
+  <nav id='nav-bar'>
     <h1>tweeter</h1>
     <span>
       <p><strong>Write</strong> new tweet <button type="submit">&#x270C;</button></p>
     </span>
   </nav>
 
-  <header>
+  <header id='user_header'>
 
     <div class="avatar">
       <img src="/images/profile-hex.png">
@@ -50,18 +53,40 @@
   </header>
 
   <!-- Page-specific (main) content here -->
-  <main class="container">
+  <main id="main_container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form action="/tweets" method="POST">
-        <label for="tweet-text">What are you humming about?</label>
+        <label for="tweet-text">What are you humming about?</label><br>
         <textarea name="text" id="tweet-text"></textarea>
         <div>
           <button type="submit"><span>Tweet</span></button>
           <span id="wordCount">140</span>
         </div>
       </form>
-    </section>
+
+      <section class='client-tweet'>
+      <div class="tweet_container">
+        <header class='tweet_icon'>
+            <img class='man-icon'src="/images/man.png"><br>
+            <span class='icon-name'>NB-famous</span>
+        </header>
+        <div class='client-text'>
+        <article>Client Tweet Goes Here</article><br>
+        <hr>
+        </div>
+        <div>
+          <footer class='footer_icon'>
+            <label for='last-post'><span>days</span></label>
+            <span id="wordIcon">little icons go here</span>
+          </footer>
+        </div>
+      </div>
+      </section>
+
+      </section>
+
+    
   </main>
 </body>
 
