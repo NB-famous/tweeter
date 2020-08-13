@@ -15,8 +15,9 @@
     type="text/css" />
 
   <!--External Icons-->
-  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+  <link rel="stylesheet" href="vendor/css/all.min.css">
   <script src="https://kit.fontawesome.com/4ba6131562.js" crossorigin="anonymous"></script>
+
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -37,13 +38,8 @@
   <!-- Top nav bar (fixed) -->
   <nav id='nav-bar'>
     <h1>tweeter</h1>
-    <span>
-      <p><strong>Write</strong> new tweet <button type="submit">&#x270C;</button></p>
-    </span>
-  </nav>
 
-  <header id='user_header'>
-
+    <header id='user_header'>
     <div class="avatar">
       <img src="/images/profile-hex.png">
     </div>
@@ -51,11 +47,19 @@
     <div class="yourname">
       <h2>NB-famous</h2>
     </div>
-
   </header>
+  
+    <span>
+      <p><strong>Write</strong> new tweet <button type="submit">&#x270C;</button></p>
+    </span>
+
+  </nav>
+
+  <!-- This is the position of header on the nab before the change -->
 
   <!-- Page-specific (main) content here -->
   <main id="main_container">
+  <div>
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form id="compose" action="/tweets" method="POST">
@@ -65,8 +69,9 @@
           <span id="wordCount">140</span>
         </div>
       </form>
-
-    <div id="tweets-container">
+    </section>
+    </div>
+    <div id="tweets-container"/>
       <!-- <article class='client-tweet'/> -->
 
 <!-- ///This is previous code before Ajax erase later
@@ -90,9 +95,6 @@
       </div>
       </section>
 -->
-
-      </article>
-    </div>
     
   </main>
 </body>

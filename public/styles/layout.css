@@ -29,9 +29,17 @@ body {
   width: 100%;
   position: fixed;
   padding: 1.5em;
-  height: 120px;
+  height: 420px;
   background-color:#4056A1;
 }
+
+nav#nav-bar{
+
+  border: white solid;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 
 #nav-bar h1{
   font-family: 'Bungee', cursive;
@@ -47,9 +55,11 @@ body {
   color:white;
 }
 
+
 #main_container{
   display: flex;
   justify-content: center;
+  flex-direction: column;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -72,7 +82,7 @@ body {
 .tweet_icon{
   display: flex;
   align-content: flex-end;
-  flex-direction: column;
+  justify-content: space-between;
   padding-bottom: 50px;
 }
 
@@ -117,9 +127,39 @@ span.icon-name{
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   color:white;
-  margin-left: 20px;
+  margin-right: 450px;
+  padding-top: 22px;
+  padding-right: 20px;
+
+}
+
+span.icon-handle{
+
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  color:white;
+  padding-top: 22px;
+  padding-right: 30px;
+  margin-right: 10px;
   
 
+}
+
+.forgotLabel{
+  color:red;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+
+}
+
+.longLabel{
+  color:red;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+}
+
+div#tweets-container{
+  width: 1020px;
 }
 
 

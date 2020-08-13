@@ -4,6 +4,8 @@
     align-items: center;
     flex-direction: column;
     height: 400px;
+    padding-bottom: 200px;
+
 }
 
 .avatar{
@@ -16,3 +18,4 @@
     margin-top: 80px;
 
 }
+

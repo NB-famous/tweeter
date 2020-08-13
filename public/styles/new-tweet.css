@@ -1,7 +1,7 @@
 
 .new-tweet {
-    margin: 2em;
-    width: 900px;
+    margin-top: 500px;
+    width: 1022px;
     border-radius: 10px;
     background-color: #4056A1;
     padding: 10px;
@@ -62,12 +62,10 @@
 .new-tweet button span {
     cursor: pointer;
     display: inline-block;
-    position: relative;
     transition: 0.5s;
   }
   
 .new-tweet button span:after {
-    position: absolute;
     opacity: 0;
     top: 0;
     right: -20px;

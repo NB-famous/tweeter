@@ -40,6 +40,8 @@
     <header class='tweet_icon'>
         <img class='man-icon'src="${tweetObj.user.avatars}">
         <span class='icon-name'>${tweetObj.user.name}</span>
+        <span class='icon-handle'>${tweetObj.user.handle}</span>
+        
     </header>
     <div class='client-text'>
         <p>
@@ -69,7 +71,11 @@
 
 function forgotWarning(msg){
 
- let label = "<div class='forgotLabel' style='text-align:center'>" + msg + "</div>" ; 
+ let label = `
+ <div class='forgotLabel' style='text-align:center'>
+  <i class='fas fa-exclamation-triangle'/>${msg}
+  <i class='fas fa-exclamation-triangle'/>
+ </div>`; 
 
  $('.new-tweet').prepend(label);
 
@@ -84,7 +90,11 @@ function forgotWarning(msg){
 
 function longWarning(msg){
 
-  let label = "<div class='longLabel' style='text-align:center'>" + msg + "</div>" ;
+  let label = `
+  <div class='longLabel' style='text-align:center'>
+   <i class='fas fa-exclamation-triangle'/>${msg}
+   <i class='fas fa-exclamation-triangle'/>
+  </div>`;
 
   $('.new-tweet').prepend(label);
 
@@ -135,12 +145,12 @@ function tweetSubmit(event) {
   if(contentArea === ''){
     //return alert('You forgot to tweet anything.....');
 
-    return forgotWarning('You forgot to tweet anything.....');
+    return forgotWarning(' You forgot to Tweet anything ');
     
 
   } else if(contentArea.length > 140){
     //return alert('Cannot post this. Tweet is to long......')
-    return longWarning('Cannot post this. Tweet is to long......');
+    return longWarning(' Cannot post this! Tweet is to long ');
   } else{
 
     $.ajax({
