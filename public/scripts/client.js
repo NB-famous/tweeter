@@ -32,11 +32,13 @@
 
   let createTweetElement = (tweetObj) => {
 
+     let $tweetBox = $("<article>").addClass("client-tweet");
+
     const html =
     `
     <div class="tweet_container">
     <header class='tweet_icon'>
-        <img class='man-icon'src="/images/man.png">
+        <img class='man-icon'src="${tweetObj.user.avatars}">
         <span class='icon-name'>${tweetObj.user.name}</span>
     </header>
     <div class='client-text'>
@@ -59,23 +61,24 @@
   </div><br>
   
   `
-    let place = $('article.client-tweet').append(html);
+    $tweetBox = $tweetBox.append(html);
 
-    return place;
-}
+    return $tweetBox;
+
+};
 
 
-function renderTweets(tweets) {
+  function renderTweets(tweets) {
 
-  let newData = [];
-    tweets.forEach(function(tweet) {
-     let newData = $('.tweets-container').prepend(createTweetElement(tweet));
-    });
-    return newData; 
-
-    console.log('this is:', newData);
-     
+    let $html = $('<div></div>');
+    tweets.forEach((tweet)=> {
+      let newtweet = createTweetElement(tweet);
+      $html.prepend(newtweet);
+    })
+    $("#tweets-container").html($html);
   }
+
+
 
 
 function loadTweets() {
@@ -99,6 +102,14 @@ function tweetSubmit(event) {
 
   let myTweet = $(this).serialize();
   let contentArea = $('#tweet-text').val();
+  //let count = $('#wordCount').val();
+
+
+  if(contentArea === ''){
+    return alert('You forgot to tweet anything.....');
+  } else if(contentArea.length > 140){
+    return alert('Cannot post this. Tweet is to long......')
+  } else{
 
     $.ajax({
       url: '/tweets',
@@ -107,17 +118,19 @@ function tweetSubmit(event) {
     }).done(function(data) {
       $('#tweet-text').val('');
       $('#wordCount').html(140);
-      console.log('successfull Ajax Call....');
+
+      console.log('success!!!');
+
       loadTweets();
     });
-  
+  }
 }
 
 
   $(document).ready(function() {
 
-    loadTweets();
-    
+    //loadTweets();
+
     $('#compose').on('submit', tweetSubmit);
 
     console.log('submit is successful');
