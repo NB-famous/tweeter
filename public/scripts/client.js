@@ -30,12 +30,11 @@
   ] */
 
 
-let createTweetElement = (tweetObj) => {
+  let createTweetElement = (tweetObj) => {
 
     const html =
     `
     <div class="tweet_container">
-
     <header class='tweet_icon'>
         <img class='man-icon'src="/images/man.png">
         <span class='icon-name'>${tweetObj.user.name}</span>
@@ -60,47 +59,66 @@ let createTweetElement = (tweetObj) => {
   </div><br>
   
   `
-
     let place = $('article.client-tweet').append(html);
 
     return place;
-
-
 }
 
 
 function renderTweets(tweets) {
+
+  let newData = [];
     tweets.forEach(function(tweet) {
-      $('#tweets-container').prepend(createTweetElement(tweet));
+     let newData = $('.tweets-container').prepend(createTweetElement(tweet));
     });
+    return newData; 
+
+    console.log('this is:', newData);
+     
   }
 
 
-  function handleSubmit(event) {
+function loadTweets() {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET',
+    dataType: "json",
+    success: function (data) {
+    console.log('Success: ', data);
+    renderTweets(data);
+    }
+  });
+}
 
-    console.log('Button clicked, performing ajax call...');
 
-    event.preventDefault();
+function tweetSubmit(event) {
 
-    let queryStr = $(this).serialize();
+  console.log('performing ajax call...');
 
-    let textAreaContent = $('#tweet-text').val();
+  event.preventDefault();
+
+  let myTweet = $(this).serialize();
+  let contentArea = $('#tweet-text').val();
+
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: myTweet 
+    }).done(function(data) {
+      $('#tweet-text').val('');
+      $('#wordCount').html(140);
+      console.log('successfull Ajax Call....');
+      loadTweets();
+    });
   
-      $.ajax({
-        url: '/tweets',
-        method: 'POST',
-        data: queryStr 
-      }).done(function(data) {
-        $('#tweet-text').val('');
-        $('#wordCount').html(140);
-        console.log('the ajax request is successfull');
-      });
-    
-  }
+}
 
 
   $(document).ready(function() {
-    $('#compose').on('submit', handleSubmit);
+
+    loadTweets();
+    
+    $('#compose').on('submit', tweetSubmit);
 
     console.log('submit is successful');
   });
