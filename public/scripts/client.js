@@ -30,7 +30,7 @@
   ] */
 
 
-  let createTweetElement = (tweetObj) => {
+  function createTweetElement(tweetObj){
 
      let $tweetBox = $("<article>").addClass("client-tweet");
 
@@ -67,6 +67,34 @@
 
 };
 
+function forgotWarning(msg){
+
+ let label = "<div class='forgotLabel' style='text-align:center'>" + msg + "</div>" ; 
+
+ $('.new-tweet').prepend(label);
+
+ setTimeout(function(){
+
+  return $('.forgotLabel').fadeOut();
+
+ }, 1000);
+
+
+}
+
+function longWarning(msg){
+
+  let label = "<div class='longLabel' style='text-align:center'>" + msg + "</div>" ;
+
+  $('.new-tweet').prepend(label);
+
+  setTimeout(function(){
+
+    return $('.longLabel').fadeOut();
+  
+   }, 1000);
+}
+
 
   function renderTweets(tweets) {
 
@@ -102,13 +130,17 @@ function tweetSubmit(event) {
 
   let myTweet = $(this).serialize();
   let contentArea = $('#tweet-text').val();
-  //let count = $('#wordCount').val();
 
 
   if(contentArea === ''){
-    return alert('You forgot to tweet anything.....');
+    //return alert('You forgot to tweet anything.....');
+
+    return forgotWarning('You forgot to tweet anything.....');
+    
+
   } else if(contentArea.length > 140){
-    return alert('Cannot post this. Tweet is to long......')
+    //return alert('Cannot post this. Tweet is to long......')
+    return longWarning('Cannot post this. Tweet is to long......');
   } else{
 
     $.ajax({
