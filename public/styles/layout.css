@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -20,20 +23,22 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 24px;
   background-image: url(/../images/skulls.png);
+  z-index: 3;
 }
 
-#nav-bar{
-  display:flex;
+#nav-bar {
+  display: flex;
   justify-content: space-between;
   top: 0;
   width: 100%;
   position: fixed;
   padding: 1.5em;
   height: 420px;
-  background-color:#4056A1;
+  background-color: #4056A1;
+  z-index: 2;
 }
 
-nav#nav-bar{
+nav#nav-bar {
 
   border: white solid;
   border-bottom-left-radius: 10px;
@@ -41,22 +46,22 @@ nav#nav-bar{
 }
 
 
-#nav-bar h1{
+#nav-bar h1 {
   font-family: 'Bungee', cursive;
   margin-top: 20px;
   margin-left: 30px;
-  color:white;
+  color: white;
 }
 
-#nav-bar p{
+#nav-bar p {
   margin-top: 30px;
   margin-left: 30px;
   padding-bottom: 10px;
-  color:white;
+  color: white;
 }
 
 
-#main_container{
+#main_container {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -65,41 +70,43 @@ nav#nav-bar{
   padding-right: 10%;
 }
 
-.client-tweet{
+.client-tweet {
   padding-top: 50px;
 }
 
-.tweet_container{
-  padding-top: 10px;
+.tweet_container {
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
   border: solid white;
   border-radius: 5px;
 }
 
-.tweet_container:hover{
-  box-shadow: 0 12px 20px 0 white,0 17px 50px 0 rgba(18, 48, 218, 0.548);
+.tweet_container:hover {
+  box-shadow: 0 12px 20px 0 white, 0 17px 50px 0 rgba(18, 48, 218, 0.548);
 
 }
 
-.tweet_container:hover span{
+.tweet_container:hover span {
   visibility: visible;
   opacity: 1;
   transition: visibility 1s linear 0s, opacity 300ms;
 }
 
-span.wordIcon{
+span.wordIcon {
   opacity: 0;
 }
 
-.tweet_icon{
+.tweet_icon {
   display: flex;
   align-content: flex-end;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: baseline;
   padding-bottom: 50px;
 }
 
 
-.client-text{
+.client-text {
   padding-bottom: 2px;
   padding-left: 40px;
   padding-right: 40px;
@@ -107,10 +114,9 @@ span.wordIcon{
   font-weight: bold;
   color: white;
   overflow-wrap: break-word;
-
 }
 
-.client-text article{
+.client-text article {
   padding-left: 50px;
 }
 
@@ -120,7 +126,7 @@ span.wordIcon{
   border: 2px solid white;
 }
 
-footer.footer_icon{
+footer.footer_icon {
   display: flex;
   justify-content: space-between;
   padding-right: 20px;
@@ -128,79 +134,88 @@ footer.footer_icon{
 }
 
 
-img.man-icon{
+img.man-icon {
   display: inline-block;
-  width: 50px;
-  height: 50px;
-  margin-left: 40px;
-  margin-top: 10px;
-  margin-right: 20px;
-  background-color: white;
-  
+  justify-self: flex-start;
+  width: 70px;
+  height: 70px;
+  color: black;
+  background-color: black;
+  border-radius: 15px;
 }
 
-div.icon-name{
+div.icon-name {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
-  color:white;
-  padding-right: 550px;
-  
-
+  color: white;
+  width: 650px;
+  padding-left: 20px;
+  align-self: center;
 }
 
-span.icon-handle{
+span.icon-handle {
   opacity: 0;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Bungee', cursive;
   font-weight: bold;
-  font-size: 24px;
-  color:white;
+  font-size: 40px;
+  color: white;
   padding-top: 22px;
   padding-right: 50px;
-  
+  align-self: center;
 }
 
 
 
-.forgotLabel{
-  color:red;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: bold;
-
-}
-
-.longLabel{
-  color:red;
+.forgotLabel {
+  color: red;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
 }
 
-div#tweets-container{
+.longLabel {
+  color: red;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+}
+
+div#tweets-container {
   width: 1020px;
 }
 
-.last-post div{
+.last-post div {
   padding-left: 15px;
   font-weight: bold;
   font-size: large;
 }
 
-#back2top{
+#back2top {
   position: absolute;
   right: 10px;
   height: 60px;
   width: 60px;
   border-radius: 20px;
   font-size: 40px;
-  
 }
 
+button#scrollUp {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  font-size: 35px;
+  border-radius: 10px;
+  margin-left: 80px;
+  margin-top: 5px;
+}
 
+.writeNew {
+  font-size: 30px;
+}
 
+.bolded {
+  font-size: 30px;
+}
 
-
-
-
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+img.profileImg {
+  height: 250px;
+  width: 250px;
+}

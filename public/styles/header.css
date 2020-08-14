@@ -1,21 +1,18 @@
-#user_header{
+#user_header {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 400px;
     padding-bottom: 200px;
-
 }
 
-.avatar{
+.avatar {
     height: 256px;
     padding-top: 135px;
     margin-top: 50px;
 }
 
-.yourname{
+.yourname {
     margin-top: 80px;
-
 }
-

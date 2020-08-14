@@ -7,8 +7,7 @@
 function createTweetElement(tweetObj) {
   let $tweetBox = $("<article>").addClass("client-tweet");
   const html =
-    `
-    <div class="tweet_container">
+    `<div class="tweet_container">
     <header class='tweet_icon'>
         <img class='man-icon'src="${tweetObj.user.avatars}">
         <div class='icon-name'>${tweetObj.user.name}</div>
@@ -34,9 +33,7 @@ function createTweetElement(tweetObj) {
         </span>
       </footer>
     </div>
-  </div><br>
-  
-  `
+  </div><br>`
   $tweetBox = $tweetBox.append(html);
   return $tweetBox;
 };
@@ -92,11 +89,9 @@ function loadTweets() {
 
 // Post request doing Ajax Call
 function tweetSubmit(event) {
-
   event.preventDefault();
   let myTweet = $(this).serialize();
   let contentArea = $('#tweet-text').val();
-
   if (contentArea === '') {
     return forgotWarning(' You forgot to Tweet anything ');
   } else if (contentArea.length > 140) {
