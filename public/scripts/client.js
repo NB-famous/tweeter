@@ -52,11 +52,10 @@
     <hr class='myLine'>
     <div>
       <footer class='footer_icon'>
-        <label for='last-post'><span>days</span></label>
-        <span id="wordIcon">
-            <i class="fas fa-flag"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="fas fa-grin-hearts"></i>
+        <label class='last-post'>
+          <span>Tweeted ${getTime(tweetObj.created_at)}</span>
+        </label>
+        <span class="wordIcon">
         </span>
       </footer>
     </div>
@@ -164,16 +163,74 @@ function tweetSubmit(event) {
       console.log('success!!!');
 
       loadTweets();
+
     });
   }
 }
 
+function getTime(postedTime) {
+  const currentTime = Date.now();
+  const Seconds = (currentTime - postedTime) / 1000;
+  const Minutes = (currentTime - postedTime) / 1000 / 60;
+  const Hours = (currentTime - postedTime) / 1000 / 60 / 60;
+
+  if(Math.floor(Seconds) === 0){
+    return `just now...`;
+  }else if(Minutes < 1) {
+    return `${Math.floor(Seconds)} seconds ago`;
+  }else if(Minutes > 1 && Minutes < 60) {
+    return `${Math.floor(Minutes)} minutes ago`;
+  } else if (Minutes > 60 && Hours < 24) {
+    return `${Math.floor(Hours)} hours ago`;
+  } else if (Hours > 24) {
+    return `${Math.floor(Hours / 24)} days ago`;
+  }
+}
+
+function hoverBox(){
+
+  const hover = `<i class="fas fa-flag"></i>
+  <i class="fas fa-retweet"></i>
+  <i class="fas fa-grin-hearts"></i>`
+
+  let $hov = $('span.wordIcon').append(hover);
+
+  return $hov;
+
+}
+
+
+
 
   $(document).ready(function() {
 
-    //loadTweets();
+    loadTweets();
 
     $('#compose').on('submit', tweetSubmit);
 
+
+
+    $('#tweets-container').on('mouseenter','.tweet_container', function() {
+
+      console.log('in handler')
+       //$('.client-tweet').addClass('wordIcon');
+       hoverBox().fadeIn();
+       console.log("this is pointed");
+    });
+
+     $('#tweets-container').on('mouseleave','.tweet_container', function() {
+        console.log('hello')
+        //$('span.wordIcon').html('')
+        hoverBox().empty();
+  
+      });
+
     console.log('submit is successful');
+
+
+    $("#scrollUp").click(function(){
+      $("#head-container").slideToggle("fast", function (){});
+    });
+
+
   });
