@@ -73,15 +73,21 @@ nav#nav-bar{
   padding-top: 10px;
   border: solid white;
   border-radius: 5px;
+}
+
+.tweet_container:hover{
+  box-shadow: 0 12px 20px 0 white,0 17px 50px 0 rgba(18, 48, 218, 0.548);
 
 }
 
-.tweet_container:hover, span.icon-handle:hover{
-  box-shadow: 0 12px 20px 0 white,0 17px 50px 0 rgba(18, 48, 218, 0.548);
+.tweet_container:hover span{
   visibility: visible;
   opacity: 1;
   transition: visibility 1s linear 0s, opacity 300ms;
-  
+}
+
+span.wordIcon{
+  opacity: 0;
 }
 
 .tweet_icon{
@@ -133,7 +139,7 @@ img.man-icon{
   
 }
 
-span.icon-name{
+div.icon-name{
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   color:white;
@@ -172,10 +178,20 @@ div#tweets-container{
   width: 1020px;
 }
 
-.last-post span{
+.last-post div{
   padding-left: 15px;
   font-weight: bold;
   font-size: large;
+}
+
+#back2top{
+  position: absolute;
+  right: 10px;
+  height: 60px;
+  width: 60px;
+  border-radius: 20px;
+  font-size: 40px;
+  
 }
 
 

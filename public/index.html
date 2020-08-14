@@ -35,22 +35,23 @@
 </head>
 
 <body>
+
   <!-- Top nav bar (fixed) -->
   <nav id='nav-bar'>
     <h1>tweeter</h1>
 
     <header id='user_header'>
-    <div class="avatar">
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div class="yourname">
-      <h2>NB-famous</h2>
-    </div>
-  </header>
-  
+      <div class="avatar">
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div class="yourname">
+        <h2>NB-famous</h2>
+      </div>
+    </header>
+
     <span>
-      <p><strong>Write</strong> new tweet <button id='scrollUp' type="submit">&#x270C;</button></p>
+      <p><strong>Write</strong> new tweet <button id='scrollUp' type="submit"><a href='#top'>&#x270C;</a></button></p>
     </span>
 
   </nav>
@@ -59,44 +60,25 @@
 
   <!-- Page-specific (main) content here -->
   <main id="main_container">
-  <div id='head-container'>
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form id="compose" action="/tweets" method="POST">
-        <textarea name="text" id="tweet-text" placeholder='What are you humming about?'></textarea>
-        <div>
-          <button id='tweet_btn' type="submit"><span>Tweet</span></button>
-          <span id="wordCount">140</span>
-        </div>
-      </form>
-    </section>
-    </div>
-    <div id="tweets-container"/>
-      <!-- <article class='client-tweet'/> -->
-
-<!-- ///This is previous code before Ajax erase later
-
-      <section class='client-tweet'>
-      <div class="tweet_container">
-        <header class='tweet_icon'>
-            <img class='man-icon'src="/images/man.png"><br>
-            <span class='icon-name'>NB-famous</span>
-        </header>
-        <div class='client-text'>
-        </div>
-        <br>
-        <hr class='myLine'>
-        <div>
-          <footer class='footer_icon'>
-            <label for='last-post'><span>days</span></label>
-            <span id="wordIcon">little icons go here</span>
-          </footer>
-        </div>
-      </div>
+    <div id='head-container'>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form id="compose" action="/tweets" method="POST">
+          <textarea name="text" id="tweet-text" placeholder='What are you humming about?'></textarea>
+          <div>
+            <button id='tweet_btn' type="submit"><span>Tweet</span></button>
+            <span id="wordCount">140</span>
+          </div>
+        </form>
       </section>
--->
-    
+    </div>
+    <div id="tweets-container" />
   </main>
+
+  <button id='back2top' type="button"><a href='#top'><i class="fas fa-arrow-circle-up"></i></a></button>
+
+
 </body>
+
 
 </html>
